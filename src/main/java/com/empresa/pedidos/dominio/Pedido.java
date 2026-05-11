@@ -1,4 +1,5 @@
 package com.empresa.pedidos.dominio;
+import org.springframework.stereotype.Service;
 
 public class Pedido {
     private PedidoId id;
