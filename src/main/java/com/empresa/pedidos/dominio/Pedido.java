@@ -1,6 +1,4 @@
 package com.empresa.pedidos.dominio;
-import com.empresa.pedidos.infraestructura.persistencia.RepositorioPedidosJpa;
-private com.empresa.pedidos.infraestructura.persistencia.RepositorioPedidosJpa repo;
 
 public class Pedido {
     private PedidoId id;
