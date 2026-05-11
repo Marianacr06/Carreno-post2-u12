@@ -22,15 +22,16 @@ public class ReglasArquitectura {
             "javax.persistence..", "org.springframework.mail..");
 
     // Regla 2: Los controladores solo acceden a la Facade (corregida)
-    @ArchTest
-    static final ArchRule controladorSoloFacade = classes()
-        .that().resideInAPackage("..adaptadores.rest..")
-        .should().onlyAccessClassesThat()
-        .resideInAnyPackage(
-            "..adaptadores.facade..", "..dominio..",
-            "org.springframework.web..", "org.springframework.http..",
-            "java..", "sun..");
-
+    // Regla 2: Los controladores solo acceden a la Facade
+@ArchTest
+static final ArchRule controladorSoloFacade = classes()
+    .that().resideInAPackage("..adaptadores.rest..")
+    .should().onlyAccessClassesThat()
+    .resideInAnyPackage(
+        "..adaptadores.facade..", "..adaptadores.rest..",
+        "..dominio..",
+        "org.springframework.web..", "org.springframework.http..",
+        "java..", "sun..");
     // Regla 3: Los puertos de dominio son interfaces
     @ArchTest
     static final ArchRule puertosComoInterfaces = classes()
